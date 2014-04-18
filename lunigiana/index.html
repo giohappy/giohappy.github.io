@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
     <link rel="stylesheet" href="static/style.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+    <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false"></script>
+    <script src="http://psha.org.ru/leaflet/Google.js"></script>
     <script type="text/javascript">
         function init(){
             var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -15,6 +17,7 @@
             var map = L.map('map')
             map.setView([44.2581073052,10.0106919981], 10);
             map.addLayer(osm);
+            var googleLayer = new L.Google('ROADMAP');
             var myStyle = {
                 "color": "#555555",
                 "weight": 2,
@@ -24,7 +27,8 @@
             var lunigiana = L.geoJson(lunigianaJSON,{style:myStyle})
             lunigiana.addTo(map);
             var baseLayers = {
-                "OpenStreetMap": osm
+                "OpenStreetMap": osm,
+                "Google Streets": googleLayer
             };
             var overlays = {
                 "Area Lunigiana": lunigiana,
