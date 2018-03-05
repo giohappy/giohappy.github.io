@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- COMMON TAGS -->
+		<meta charset="utf-8">
+		<title> Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria</title>
+		<!-- Search Engine -->
+		<meta name="description" content="Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria">
+		<meta name="image" content="http://giohappy.github.com/syria_damage_2017/images/thumb.png">
+		<!-- Schema.org for Google -->
+		<meta itemprop="name" content=" Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria">
+		<meta itemprop="description" content="Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria">
+		<meta itemprop="image" content="http://giohappy.github.com/syria_damage_2017/images/thumb.png">
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content=" Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria">
+		<meta name="twitter:description" content="Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria">
+		<meta name="twitter:site" content="@giovanni_allegri">
+		<meta name="twitter:creator" content="@giovanni_allegri">
+		<meta name="twitter:image:src" content="http://giohappy.github.com/syria_damage_2017/images/thumb.png">
+		<!-- Open Graph general (Facebook, Pinterest & Google+) -->
+		<meta name="og:title" content=" Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria">
+		<meta name="og:description" content="Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria">
+		<meta name="og:image" content="http://giohappy.github.com/syria_damage_2017/images/thumb.png">
+		<meta name="og:url" content="http://giohappy.github.com/syria_damage_2017/index.html">
+		<meta name="og:site_name" content="Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria">
+		<meta name="og:type" content="website">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+		#title {
+			position: absolute; 
+			bottom: 0px; 
+			width: 100%;
+			color: white;
+			background-color: rgba(0,0,0,0.65);;
+			font-size: 2.5em;
+			text-align: center;
+			height: 80px;
+			
+			z-index:1000;
+		}
+		.subtitle {
+			font-size: 0.6em
+		}
+		.legend {
+			position: fixed; 
+			top: 10px; 
+			right: 10px; 
+			z-index:1000
+		}
+        </style>
+        <title></title>
+    </head>
+    <body>
+		<div id="legend" class="legend">
+			<img src=",/images/legend.png" />
+		</div>
+        <div id="map">
+			<div id="title"  style="">
+				<div>Damage density of Damascus, Kafr Batna and Irbin subdistricts, Damascus Governorate, Syria</div>
+				<div class="subtitle">
+					3 December 2017 - <a href="http://www.unitar.org" target="_blank">UNITAR-UNOSAT</a>
+				</div>
+			</div>
+		</div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/Damage_Sites_Damascus_2017_Ex_Update_1.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:10
+        }).fitBounds([[33.50448898463753,36.30908996284981],[33.54236360103227,36.38359145100478]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://www.mapbox.com" target="_blank">Mapbox Satellite</a>');
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            map.setMaxBounds(map.getBounds());
+        }
+        var overlay_MapboxSatellite_0 = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ2lvaGFwcHkiLCJhIjoiY2lxZHJlY256MDA3dWh1bWN6M292bXRjeSJ9.xtrzoLtoZiBFlt9DZqaDzQ', {
+            opacity: 1.0
+        });
+        overlay_MapboxSatellite_0.addTo(map);
+        map.addLayer(overlay_MapboxSatellite_0);
+
+        function style_Damage_Sites_Damascus_2017_Ex_Update_1_0(feature) {
+            switch(String(feature.properties['DaSitCl_2'])) {
+                case 'Destroyed':
+                    return {
+                pane: 'Damage_Sites_Damascus_2017_Ex_Update_1',
+                radius: 4.0,
+                stroke: false,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(227,26,28,1.0)',
+            }
+                    break;
+                case 'Moderate Damage':
+                    return {
+                pane: 'Damage_Sites_Damascus_2017_Ex_Update_1',
+                radius: 4.0,
+                stroke: false,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,128,0,1.0)',
+            }
+                    break;
+                case 'No Visible Damage':
+                    return {
+                pane: 'Damage_Sites_Damascus_2017_Ex_Update_1',
+                radius: 4.0,
+                stroke: false,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,207,0,1.0)',
+            }
+                    break;
+                case 'Severe Damage':
+                    return {
+                pane: 'Damage_Sites_Damascus_2017_Ex_Update_1',
+                radius: 4.0,
+                stroke: false,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(227,26,28,1.0)',
+            }
+                    break;
+                default:
+                    return {
+                pane: 'Damage_Sites_Damascus_2017_Ex_Update_1',
+                radius: 4.0,
+                stroke: false,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(128,210,140,1.0)',
+            }
+                    break;
+            }
+        }
+        map.createPane('Damage_Sites_Damascus_2017_Ex_Update_1');
+        map.getPane('Damage_Sites_Damascus_2017_Ex_Update_1').style.zIndex = 401;
+        map.getPane('Damage_Sites_Damascus_2017_Ex_Update_1').style['mix-blend-mode'] = 'normal';
+        var layer_Damage_Sites_Damascus_2017_Ex_Update_1 = new L.geoJson(json_Damage_Sites_Damascus_2017_Ex_Update_1, {
+            attribution: '<a href=""></a>',
+            pane: 'Damage_Sites_Damascus_2017_Ex_Update_1',
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Damage_Sites_Damascus_2017_Ex_Update_1_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Damage_Sites_Damascus_2017_Ex_Update_1);
+        map.addLayer(layer_Damage_Sites_Damascus_2017_Ex_Update_1);
+        setBounds();
+        </script>
+    </body>
+</html>
