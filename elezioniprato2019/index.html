@@ -6,7 +6,7 @@
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
         <meta name="mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta property="og:url"                content="http://giohappy.github.io/elezioniprato2019" />
+		<meta property="og:url"                content="http://giohappy.github.io/elezioniprato2019" />
         <meta property="og:type"               content="article" />
         <meta property="og:title"              content="Differenze di voto a Prato - Amministrative 2019" />
         <meta property="og:description"        content="Mappa delle difference percentuali di voto ai candidati sindaci Matteo Biffoni e Daniele Spada" />
@@ -111,20 +111,6 @@
         }
 
         function style_SezioniElettorali_1_0(feature) {
-            if (feature.properties['diff'] >= 37.600000 && feature.properties['diff'] <= -15.970000 ) {
-                return {
-                pane: 'pane_SezioniElettorali_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.89)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(0,78,181,0.89)',
-            }
-            }
             if (feature.properties['diff'] >= -15.970000 && feature.properties['diff'] <= -10.000000 ) {
                 return {
                 pane: 'pane_SezioniElettorali_1',
@@ -136,7 +122,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(73,129,202,0.89)',
+                fillColor: 'rgba(0,99,160,0.89)',
             }
             }
             if (feature.properties['diff'] >= -10.000000 && feature.properties['diff'] <= -5.000000 ) {
@@ -150,10 +136,24 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
+                fillColor: 'rgba(73,129,202,0.89)',
+            }
+            }
+            if (feature.properties['diff'] >= -5.000000 && feature.properties['diff'] <= -2.500000 ) {
+                return {
+                pane: 'pane_SezioniElettorali_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,0.89)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
                 fillColor: 'rgba(147,180,224,0.89)',
             }
             }
-            if (feature.properties['diff'] >= -5.000000 && feature.properties['diff'] <= 0.000000 ) {
+            if (feature.properties['diff'] >= -2.500000 && feature.properties['diff'] <= 0.000000 ) {
                 return {
                 pane: 'pane_SezioniElettorali_1',
                 opacity: 1,
@@ -260,7 +260,7 @@
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .title += 'Search for a place';
         var baseMaps = {};
-        L.control.layers(baseMaps,{'Sezioni Elettorali<br /><table><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_3761600.png" /></td><td>37,6 - -16,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_1601001.png" /></td><td>-16,0 - -10,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_100502.png" /></td><td>-10,0 - -5,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_50003.png" /></td><td>-5,0 - 0,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_00254.png" /></td><td>0,0 - 2,5</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_25505.png" /></td><td>2,5 - 5,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_501006.png" /></td><td>5,0 - 10,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_1002007.png" /></td><td>10,0 - 20,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_00008.png" /></td><td>0.0 - 0.0</td></tr></table>': layer_SezioniElettorali_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'Sezioni Elettorali<br /><table><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_101590.png" /></td><td>10 - 15,9</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_5101.png" /></td><td>5 - 10</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_2552.png" /></td><td>2,5 - 5</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_0253.png" /></td><td>0 - 2,5</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_00254.png" /></td><td>0,0 - 2,5</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_25505.png" /></td><td>2,5 - 5,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_501006.png" /></td><td>5,0 - 10,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_1002007.png" /></td><td>10,0 - 20,0</td></tr><tr><td style="text-align: center;"><img src="legend/SezioniElettorali_1_203768.png" /></td><td>20 - 37,6</td></tr></table>': layer_SezioniElettorali_1,"OpenStreetMap": layer_OpenStreetMap_0,},{collapsed:false}).addTo(map);
         setBounds();
         </script>
     </body>
